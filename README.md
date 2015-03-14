@@ -1,2 +1,2 @@
-# CSSPress
-Python script to minify css files
+# CSSpress
+Python script to compress css files
