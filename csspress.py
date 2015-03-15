@@ -1,4 +1,5 @@
 import copy
+import gzip
 
 file_name = raw_input('Enter file name: ')
 
@@ -7,8 +8,14 @@ file_name = file_name.split('.')
 file_name_alias = copy.deepcopy(file_name)
 
 file_name.insert(1, '.min.')
-output_file_name = ''.join(file_name) 
+output_file_name = ''.join(file_name)
+gzipped_output_file_name = file_name_alias
+
+gzipped_output_file_name.insert(1, '.gzip.')
+gzipped_output_file_name = ''.join(gzipped_output_file_name) 
+
 t2 = open(output_file_name,'w')
+t3 = gzip.open(gzipped_output_file_name,'w')
 
 content = t1.read()
 
@@ -86,9 +93,11 @@ def css(words):
 	words = ''.join(words)
 
 	t2.write(words)
+	t3.write(words)
 
 	t1.close()
 	t2.close()
+	t3.close()
 
 if (file_name_alias[-1] == 'css'):
 	css(content)
