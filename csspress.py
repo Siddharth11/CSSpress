@@ -66,7 +66,7 @@ def css(words):
 			words[i] = chr(32) + words[i] + chr(32)
 
 
-		# remove free whitespace
+		# remove unnecessary whitespace
 		whitespace = ['',' ','\n','\t']
 		if (words[i] == '{' and words[i-1][-1] in whitespace) or (words[i] == '}' and words[i-1][-1] in whitespace):
 			words[i-1] = words[i-1][:-1]
